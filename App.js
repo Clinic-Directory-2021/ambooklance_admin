@@ -205,3 +205,5 @@ function Admin ({navigation}){
       });
 
 export default App;
+
+/**dasdasdadbadjabdjabda */
