@@ -10,12 +10,6 @@ const Profile= () => {
 
   <View style={styles.container}>
   
-  <ImageBackground source={require("./assets/RedRectangle.png")} 
-                    style={styles.background1}>
-  <Text style={styles.text}>
-      Profile</Text>
-  </ImageBackground>
-
   </View>
 
   );

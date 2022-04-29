@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {StyleSheet, Text, View,Image,ImageBackground,TouchableHighlight,TouchableOpacity, Button} from "react-native"
+import {StyleSheet, Text, View} from "react-native"
 
 
 const Stack = createNativeStackNavigator();
@@ -9,30 +9,20 @@ const Settings = () => {
   return (
 
   <View style={styles.container}>
-  
-  <ImageBackground source={require("./assets/RedRectangle.png")} 
-                    style={styles.background1}>
-  <Text style={styles.text}>
-      PERSON</Text>
-  </ImageBackground>
+      <Card style={{padding: 10, margin: 10}}>
+        <Text>Name:</Text>
+        <Text>Contact:</Text>
+        <Text>Date and Time:</Text>
+      </Card>
+    </View>
 
-  </View>
 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-  },
-  background1:{
-    height:70,
-    top:0,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text:{
-    color:'white',
-    fontSize: 30, 
+    padding:10
   },
 });
 

@@ -2,16 +2,19 @@ import React from 'react';
 import { Button, StyleSheet, Text, View, TouchableOpacity,Image,ImageBackground, TouchableHighlight} from "react-native"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Bookings from './Bookings'
+import Bookings from './Emergency'
 import Residents from './Resident'
 import Officials from './Official'
 import History1 from './History'
-import Bookings1 from './Bookings1'
+import Bookings1 from './Scheduled'
 import Profile1 from './Profile'
 import Set from './Settings'
 import Mess from './Messages'
 import Home1 from './Home'
 import Per from './Person'
+import HomePage from './HomePage';
+import Login from './Login';
+import TopNavTabs from './TopNavTabs';
 
 
 
@@ -19,19 +22,18 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   return(
+    
     <NavigationContainer>
-    <Stack.Navigator  screenOptions={{headerTitleAlign: 'center',  }}>
+    <Stack.Navigator  
+    screenOptions={{headerTitleAlign: 'center'}}>
+    <Stack.Screen name = 'Login'component={Login}/>
       <Stack.Screen name="Admin" 
-      component={Admin}
+      component={HomePage}
       options={({navigation}) => ({
       
       headerRight: () => (
-      <TouchableOpacity 
-      onPress={() => navigation.navigate('Profile')}>
       <Image style={{ width: 30, height: 30, top:3, right:4}} source={require("./assets/ProfileImage.png")} />
-      </TouchableOpacity>
     ),  
-
       headerLeft: () => (
       <View style={styles.row}>
       <TouchableOpacity 
@@ -47,21 +49,19 @@ const App = () => {
   )})}
   />
 
-        
-      <Stack.Screen name = 'Bookings'component={Bookings}/>
+      
       <Stack.Screen name = 'Residents'component={Residents}/>
       <Stack.Screen name = 'Officials'component={Officials}/>
       <Stack.Screen name = 'History'component={History1}/>
-      <Stack.Screen name = 'Bookings1'component={Bookings1}/>
       <Stack.Screen name = 'Profile'component={Profile1}/>
       <Stack.Screen name = 'Settings'component={Set}/>
       <Stack.Screen name = 'Messages'component={Mess}/>
       <Stack.Screen name = 'Home'component={Home1}/>
       <Stack.Screen name = 'Person'component={Per}/>
+
+
+      <Stack.Screen name = 'Bookings'component={TopNavTabs}/>
     
-      
-
-
     </Stack.Navigator>
     </NavigationContainer>
   );
@@ -103,26 +103,6 @@ function Admin ({navigation}){
     </TouchableOpacity>
       
     {/* BOTTOMNAV */}
-
-  <ImageBackground source={require("./assets/Background.png")} 
-                    style={styles.background}>
-
-  <View style={styles.row2}>
-
-    <TouchableHighlight underlayColor="#C81D35"
-    
-        style={styles.home} 
-        onPress={() => navigation.navigate('Home')}>
-        <Image source={require("./assets/Home.png")}/>
-    </TouchableHighlight>
-
-    <TouchableHighlight underlayColor="#C81D35"
-        style={styles.person} 
-        onPress={() => navigation.navigate('Person')}>
-        <Image source={require("./assets/person.png")}/>
-    </TouchableHighlight>
-  </View>
-  </ImageBackground>
     </View>
 
   );
@@ -205,5 +185,6 @@ function Admin ({navigation}){
       });
 
 export default App;
+export {Admin};
 
 /**Mike Villarta */
