@@ -110,7 +110,6 @@ const Profile = () =>{
  const styles = StyleSheet.create({
     // main design
     container: {
-      marginLeft:43,
         margin:20
     //   backgroundColor: '#fff',
     //   alignItems: 'center',
@@ -145,7 +144,7 @@ const Profile = () =>{
       borderRadius:5,
       borderColor:'#ACB8C2',
       height: 40,
-      width:327,
+      width:'93%',
       marginLeft: 12,
       marginRight: 12,
       marginBottom: 12,

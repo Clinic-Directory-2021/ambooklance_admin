@@ -10,60 +10,21 @@ const Login = ({navigation}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [indicatorFlag, setIndicatorFlag] = useState(false)
-     const loginFunction = async () =>{
-        navigation.navigate("Admin")
 
-       
-    //   setIndicatorFlag(true)
-    //   if(email == '' || password == ''){
-    //     alert('All fields are required')
-    //     setIndicatorFlag(false)
-    //   }
-    //   else{
-    //     try{
-    //       await signInWithEmailAndPassword(auth, email, password)
-    //       .then((userCredential) => {
-    //         // Signed in 
-    //         setIndicatorFlag(true)
-    //         const user = userCredential.user;
-    //         getDoc(doc(firebase, "Users", user.uid)).then(docSnap => {
-    //           if (docSnap.exists()) {
-    //             setPhoneNumber(docSnap.data()['phone_number'])
-    //             setUserEmail(docSnap.data()['email'])
-    //             setUserPass(password)
-    //             setFullName(docSnap.data()['full_name'])
-    //             setBirthdate(docSnap.data()['birthdate'])
-    //             setAge(docSnap.data()['age'])
-    //             setAddress(docSnap.data()['address'])
-    //             setUID(user.uid)
-    //             setImageUrl(docSnap.data()['image_url'])
-    //             setLatitude(docSnap.data()['latitude'])
-    //             setlongitude(docSnap.data()['longitude'])
-    //             console.log(docSnap.data()['email'] + " " + getUserEmail())
-    //             if(docSnap.data()['user_type'] == 'resident'){
-    //               navigation.navigate('Home Page')
-    //             }else{
-    //               navigation.navigate('Official Home Page')
-    //             }
-                
-    //           } else {
-    //             alert("There is something wrong in your login");
-    //             setIndicatorFlag(true)
-    //           }
-    //         })
-    //         .catch((error) => {
-    //           const errorCode = error.code;
-    //           const errorMessage = error.message;
-    //           alert("There is something wrong in your login")
-    //           console.log(errorMessage)
-    //         })
-    //       })
-    //     }
-    //     catch(e){
-    //       alert('Username or Password is incorrect')
-    //       setIndicatorFlag(false)
-    //     }
-    //   }
+     const loginFunction = async () =>{
+      setIndicatorFlag(true)
+      if(email == '' || password == ''){
+        alert('All fields are required')
+        setIndicatorFlag(false)
+      }
+      else if(email == 'admin' && password == 'admin'){
+        navigation.navigate('Admin')
+        setIndicatorFlag(false)
+      }
+      else{
+        alert('Incorrect Username or Password')
+        setIndicatorFlag(false)
+      }
      }
     return (
       <View style={styles.container}>

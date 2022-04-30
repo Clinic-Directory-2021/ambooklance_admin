@@ -14,7 +14,7 @@ const Settings= ({navigation}) => {
   }
     return (
       <ScrollView>
-      <ImageBackground style={styles.container} source={require('./assets/background.png')}>
+      <ImageBackground style={styles.container} source={require('./assets/Background.png')}>
         <View style={styles.view}>
           <View style={{flexDirection:'row', padding:10,height:90, borderBottomWidth:1, borderBottomColor:'#CACACA', alignItems: 'center',justifyContent: 'center',marginBottom:50}}>
             <Image source={{uri:getImageUrl()}} style={{marginEnd:10, width:64, height:64, borderRadius:100}}></Image>
