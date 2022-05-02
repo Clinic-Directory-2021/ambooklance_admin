@@ -1,20 +1,46 @@
+import { useState, useEffect } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {StyleSheet, Text, View,} from "react-native"
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
+import { firebase } from './firebase/firebase-config';
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 
 const Stack = createNativeStackNavigator();
 
 const History1 = () => {
-  return (
-<View style={styles.container}>
-      <Card style={{padding: 10, margin: 10}}>
-        <Text>Name:</Text>
-        <Text>Contact:</Text>
-        <Text>Date and Time:</Text>
-      </Card>
-    </View>
+  const [historyBookings, setHistoryBookings] = useState(null)
+  const q = query(collection(firebase, "Bookings"), where("status", "==", "Arrived"));
+  useEffect(async() => {
+    
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+    const temp = [];
+    querySnapshot.forEach((doc) => {
+        temp.push(doc.data());
+    });
+    setHistoryBookings(temp)
+    });
+  }, [])
 
+  return (
+    <ScrollView>
+  <View style={styles.container}>
+      {historyBookings < 1 ?
+       <Card style={{padding: 10, margin: 10}}>
+        <Text>No data</Text>
+       </Card>
+     :
+     historyBookings.map((data)=>{
+       return(
+       <Card style={{padding: 10, margin: 10}}>
+        <Text>Name: {data['user_full_name']}</Text>
+        <Text>Booking Type: {data['booking_type']}</Text>
+        <Text>Address: {data['address']}</Text>
+      </Card>)
+     })
+      }
+    </View>
+    </ScrollView>
   );
 }
 

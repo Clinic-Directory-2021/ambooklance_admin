@@ -15,6 +15,15 @@ import Per from './Person'
 import HomePage from './HomePage';
 import Login from './Login';
 import TopNavTabs from './TopNavTabs';
+import PrivateMessage from './PrivateMessage';
+import EditOfficial from './EditOfficial';
+import AddOfficial1 from './AddOfficial1';
+import AddOfficial2 from './AddOfficial2';
+import AddOfficial3 from './AddOfficial3';
+import EditResident from './EditResident';
+import AddResident1 from './AddResident1';
+import AddResident2 from './AddResident2';
+import AddResident3 from './AddResident3';
 
 
 
@@ -51,6 +60,7 @@ const App = () => {
 
       
       <Stack.Screen name = 'Residents'component={Residents}/>
+      <Stack.Screen name = 'Private Message'component={PrivateMessage}/>
       <Stack.Screen name = 'Officials'component={Officials}/>
       <Stack.Screen name = 'History'component={History1}/>
       <Stack.Screen name = 'Profile'component={Profile1}/>
@@ -58,6 +68,14 @@ const App = () => {
       <Stack.Screen name = 'Messages'component={Mess}/>
       <Stack.Screen name = 'Home'component={Home1}/>
       <Stack.Screen name = 'Person'component={Per}/>
+      <Stack.Screen name = 'Edit Official'component={EditOfficial}/>
+      <Stack.Screen name = 'Add Official 1/3'component={AddOfficial1}/>
+      <Stack.Screen name = 'Add Official 2/3'component={AddOfficial2}/>
+      <Stack.Screen name = 'Add Official 3/3'component={AddOfficial3}/>
+      <Stack.Screen name = 'Edit Resident'component={EditResident}/>
+      <Stack.Screen name = 'Add Resident 1/3'component={AddResident1}/>
+      <Stack.Screen name = 'Add Resident 2/3'component={AddResident2}/>
+      <Stack.Screen name = 'Add Resident 3/3'component={AddResident3}/>
 
 
       <Stack.Screen name = 'Bookings'component={TopNavTabs}/>

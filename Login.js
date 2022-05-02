@@ -53,7 +53,7 @@ const Login = ({navigation}) => {
           >
             <Text style={{color:'white',fontWeight:'bold', fontSize:24}}>Login</Text>
           </TouchableOpacity>
-          <Text style={{textAlign:'center',color:'#0B3954'}}>
+          {/* <Text style={{textAlign:'center',color:'#0B3954'}}>
             Forgot Password? 
             <TouchableOpacity onPress={()=> navigation.navigate('Forgot Password')}>
               <Text style={{color:'#C81D35', fontWeight:'bold'}}> Get new</Text>
@@ -64,7 +64,7 @@ const Login = ({navigation}) => {
             <TouchableOpacity onPress={()=> navigation.navigate('Sign up 1/2')}>
               <Text style={{color:'#C81D35', fontWeight:'bold',}}> Sign up</Text>
             </TouchableOpacity>
-          </Text>
+          </Text> */}
         </SafeAreaView>
         <ActivityIndicator size="large" color="#0B3954" style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}} animating={indicatorFlag}/>
       </View>
