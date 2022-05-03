@@ -72,7 +72,8 @@ const Residents = ({navigation}) => {
             phone_number: deleteField(),
             uid: deleteField(),
             user_type: deleteField(),
-            password: deleteField()
+            password: deleteField(),
+            current:'available'
           });
           alert('Successfully Deleted')
           setDeleteModalVisible(!deleteModalVisible)

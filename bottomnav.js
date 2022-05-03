@@ -10,7 +10,7 @@ function TopNav() {
     <Tab.Navigator screenOptions={{tabBarIndicatorStyle:{backgroundColor:'#C81D35'}}}>
       <Tab.Screen name="Home" component={Admin}/>
       <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Calendar" component={Calendar} />
+      {/* <Tab.Screen name="Calendar" component={Calendar} /> */}
     </Tab.Navigator>
   );
 }
