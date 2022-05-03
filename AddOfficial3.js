@@ -57,6 +57,8 @@ const AddOfficial3 = ({navigation}) =>{
                       longitude:getlongitude(),
                       user_type:'official',
                       password: encryptPassword(getPassword()),
+                      flag:true,
+                      current:'available'
                     });
 
                     
