@@ -39,7 +39,7 @@ const AddResident3 = ({navigation}) =>{
                       longitude:getlongitude(),
                       user_type:'resident',
                       password: encryptPassword(getPassword()) ,
-                      flag:true,
+                      flag:false,
                       current:'available'
                     });
 
